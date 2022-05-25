@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <record id="paperformat_invoice_ticket" model="report.paperformat">-->
+<!--            <field name="name">Factura formato ticket</field>-->
+<!--            <field name="default" eval="True"/>-->
+<!--            <field name="format">custom</field>-->
+<!--            <field name="page_height">150</field>-->
+<!--            <field name="page_width">80</field>-->
+<!--            <field name="orientation">Portrait</field>-->
+<!--            <field name="margin_top">0</field>-->
+<!--            <field name="margin_bottom">0</field>-->
+<!--            <field name="margin_left">0</field>-->
+<!--            <field name="margin_right">0</field>-->
+<!--            <field name="header_line" eval="False"/>-->
+<!--            <field name="dpi">90</field>-->
+<!--        </record>-->
+        <record id="action_boleta_electronica" model="ir.actions.report">
+            <field name="name">Boleta Electronica</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">boleta_electronica.report_boleta_electronica</field>
+            <field name="report_file">boleta_electronica.report_boleta_electronica</field>
+            <field name="print_report_name">'Boleta Electronica'</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

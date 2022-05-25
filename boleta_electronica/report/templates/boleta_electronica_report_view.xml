@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_boleta_electronica">
+          <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                 <t t-foreach="docs" t-as="o">
+                     <div class="page">
+                        <strong>Giro:</strong> <!--<t t-esc="o.l10n_cl_activity_description"/>-->
+                        <br/>
+                        <strong>BOLETA ELECTRONICA NUMERO:</strong> <t t-esc="o.l10n_latam_document_number"/>
+                        <br/>
+                        <strong>REF. VENDEDOR:</strong> <t t-esc="o.ref"/>
+                        <br/>
+                        <strong>Fecha:</strong> <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/>
+                        <br/>
+
+                        <strong>1 prenda</strong>
+                        <br/>
+
+                        <strong>Monto Total</strong> $<t t-esc="o.amount_total"/>
+                        <br/>
+                        <strong>El IVA incluido en esta boleta es de</strong>
+                        $<t t-esc="o.amount_total - o.amount_untaxed"/>
+<!--                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o.amount_total 100, 100)"/>-->
+                    </div>
+                 </t>
+            </t>
+          </t>
+        </template>
+    </data>
+</odoo>
