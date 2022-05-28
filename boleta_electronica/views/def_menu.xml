@@ -1,0 +1,9 @@
+<odoo>
+
+    <data>
+     <menuitem name="Boleta Electronica" id="boleta_electronica.menu_root"/>
+     <menuitem name="Informe Boleta Electronica" id="boleta_electronica.tablero" parent="boleta_electronica.menu_root"  action="boleta_electronica" sequence="1"/>
+
+    </data>
+
+</odoo>

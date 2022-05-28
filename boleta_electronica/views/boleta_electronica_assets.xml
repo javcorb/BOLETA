@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="boleta_electronica.pos_assets_backend"  inherit_id="report.style">
+        <xpath expr=".">
+            <t>
+
+
+
+            </t>
+        </xpath>
+
+    </template>
+</odoo>
