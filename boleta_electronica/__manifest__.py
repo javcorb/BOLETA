@@ -14,7 +14,8 @@
 
     # always loaded
     'data': [
-          'views/boleta_electronica_views.xml',
+          # 'views/boleta_electronica_views.xml',
+          # 'views/boleta_electronica_assets.xml',
           'report/templates/boleta_electronica_reports.xml',
           'report/templates/boleta_electronica_report_view.xml',
 
