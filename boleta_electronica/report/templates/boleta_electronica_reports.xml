@@ -4,7 +4,7 @@
         <field name="name">Factura formato ticket</field>
         <field name="default" eval="True"/>
         <field name="format">custom</field>
-        <field name="page_height">80</field>
+        <field name="page_height">45</field>
         <field name="page_width">150</field>
         <field name="orientation">Landscape</field>
         <field name="margin_top">15</field>

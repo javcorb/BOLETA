@@ -4,32 +4,62 @@
         <template id="report_boleta_electronica">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-<!--                    <t t-call="web.external_layout">-->
-                        <div class="page">
-                            <strong>Giro:</strong> <!--<t t-esc="o.l10n_cl_activity_description"/>-->
-                            <br/>
-                            <strong>BOLETA ELECTRONICA NUMERO:</strong>
-                            <t t-esc="o.l10n_latam_document_number"/>
-                            <br/>
-                            <strong>REF. VENDEDOR:</strong>
-                            <t t-esc="o.ref"/>
-                            <br/>
-                            <strong>Fecha:</strong>
-                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/>
-                            <br/>
+                    <!--                    <t t-call="web.external_layout">-->
+                    <div class="page">
+                        <t t-esc="o.env['res.company']._get_main_company().name"/>
+                        <br/>
+                        <t t-esc="o.env['res.company']._get_main_company().vat"/>
+                        <br/>
+                        <h5>Giro:</h5>
+                        <t t-esc="o.env['res.company']._get_main_company().l10n_cl_activity_description"/>
+                        <br/>
+                        <h5>BOLETA ELECTRONICA NUMERO:</h5>
+                        <t t-esc="o.l10n_latam_document_number"/>
+                        <br/>
+                        <h5>REF. VENDEDOR:</h5>
+                        <t t-esc="o.ref"/>
+                        <br/>
+                        <h5>Fecha:</h5>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
 
-                            <strong>1 prenda</strong>
-                            <br/>
+                        <t t-esc="o.invoice_line_ids.quantity"/> prenda
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
 
-                            <strong>Monto Total</strong>
-                            $
-                            <t t-esc="o.amount_total"/>
-                            <br/>
-                            <strong>El IVA incluido en esta boleta es de</strong>
-                            $
-                            <t t-esc="o.amount_total - o.amount_untaxed"/>
-                        </div>
-<!--                    </t>-->
+                        <h5>Monto Total</h5>
+                        $
+                        <t t-esc="o.amount_total"/>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        <h5>El IVA incluido en esta boleta es de</h5>
+                        $
+                        <t t-esc="o.amount_total - o.amount_untaxed"/>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        <h5>Timbre Electronico SII</h5>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        <t t-esc="o.env['res.company']._get_main_company().l10n_cl_dte_resolution_number"/>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        <h5>Verifique documento en sii.cl</h5>
+                    </div>
+                    <!--                    </t>-->
                 </t>
             </t>
         </template>
