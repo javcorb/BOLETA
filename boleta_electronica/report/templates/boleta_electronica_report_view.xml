@@ -6,37 +6,36 @@
                 <t t-foreach="docs" t-as="o">
                     <!--                    <t t-call="web.external_layout">-->
                     <div class="page">
-                        <t t-esc="o.env['res.company']._get_main_company().name"/>
+                        <font size="2"><t t-esc="o.env['res.company']._get_main_company().name"/></font>
                         <br/>
-                        <t t-esc="o.env['res.company']._get_main_company().vat"/>
+                        <font size="2"><t t-esc="o.env['res.company']._get_main_company().vat"/></font>
                         <br/>
-                        <h5>Giro:</h5>
-                        <t t-esc="o.env['res.company']._get_main_company().l10n_cl_activity_description"/>
+                        <font size="2">Giro:</font>
+                        <font size="2"><t t-esc="o.env['res.company']._get_main_company().l10n_cl_activity_description"/></font>
                         <br/>
-                        <h5>BOLETA ELECTRONICA NUMERO:</h5>
-                        <t t-esc="o.l10n_latam_document_number"/>
+                        <font size="2">BOLETA ELECTRONICA NUMERO:</font>
+                        <font size="2"><t t-esc="o.l10n_latam_document_number"/></font>
                         <br/>
-                        <h5>REF. VENDEDOR:</h5>
-                        <t t-esc="o.ref"/>
+                        <font size="2">REF. VENDEDOR:</font>
+                        <font size="2"><t t-esc="o.env.user.partner_id.vat"/></font>
                         <br/>
-                        <h5>Fecha:</h5>
-                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/>
-                        <br/>
-                        &amp;nbsp;&amp;nbsp;<br/>
-
-                        <t t-esc="o.invoice_line_ids.quantity"/> prenda
+                        <font size="2">Fecha:</font>
+                        <font size="2"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/></font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
-                        <h5>Monto Total</h5>
+                        <font size="2"><t t-esc="o.invoice_line_ids.quantity"/> prenda</font>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        <font size="2">Monto Total</font>
+                        <font size="2" style="text-align:right;">$<t t-esc="o.amount_total"/></font>
+                        <br/>
+                        &amp;nbsp;&amp;nbsp;<br/>
+
+                        <font size="2">El IVA incluido en esta boleta es de</font>
                         $
-                        <t t-esc="o.amount_total"/>
-                        <br/>
-                        &amp;nbsp;&amp;nbsp;<br/>
-
-                        <h5>El IVA incluido en esta boleta es de</h5>
-                        $
-                        <t t-esc="o.amount_total - o.amount_untaxed"/>
+                        <font size="2"><t t-esc="o.amount_total - o.amount_untaxed"/></font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
@@ -49,15 +48,15 @@
                         &amp;nbsp;&amp;nbsp;<br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
-                        <h5>Timbre Electronico SII</h5>
+                        <font size="2">Timbre Electronico SII</font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
-                        <t t-esc="o.env['res.company']._get_main_company().l10n_cl_dte_resolution_number"/>
+                        <font size="2"><t t-esc="o.env['res.company']._get_main_company().l10n_cl_dte_resolution_number"/></font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
-                        <h5>Verifique documento en sii.cl</h5>
+                        <font size="2">Verifique documento en sii.cl</font>
                     </div>
                     <!--                    </t>-->
                 </t>
