@@ -24,7 +24,7 @@
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
-                        <font size="2"><t t-esc="o.invoice_line_ids.quantity"/> prenda</font>
+                        <font size="2"><t t-esc="'%.0f'%o.invoice_line_ids.quantity"/> prenda</font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
