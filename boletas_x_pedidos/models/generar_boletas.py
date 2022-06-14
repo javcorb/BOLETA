@@ -41,6 +41,7 @@ class GenerarBoletas(models.Model):
         boleta = self.env['account.move']
 
         for obj in self.order_line:
+            if obj.display_type == False:
               invoice_line_ids = []
               invoice_line_ids.append((0,0,{
                 'product_id':obj.product_id,
