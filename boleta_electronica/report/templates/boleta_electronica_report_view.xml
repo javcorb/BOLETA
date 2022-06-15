@@ -6,6 +6,7 @@
                 <t t-foreach="docs" t-as="o">
                     <!--                    <t t-call="web.external_layout">-->
                     <div class="page">
+                        <div style="width: 45%;float: right;"><img t-att-src="image_data_uri(o.company_id.logo)" style="width:100%"/></div><br/>
                         <font size="2"><t t-esc="o.env['res.company']._get_main_company().name"/></font>
                         <br/>
                         <font size="2"><t t-esc="o.env['res.company']._get_main_company().vat"/></font>
@@ -52,7 +53,7 @@
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
-                        <font size="2"><t t-esc="o.env['res.company']._get_main_company().l10n_cl_dte_resolution_number"/></font>
+                        <font size="2">Res. <t t-esc="o.env['res.company']._get_main_company().l10n_cl_dte_resolution_number"/> de <t t-esc="o.env['res.company']._get_main_company().l10n_cl_dte_resolution_date.strftime('%Y')"/></font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 

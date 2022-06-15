@@ -58,7 +58,9 @@ class GenerarBoletas(models.Model):
                 'invoice_line_ids':invoice_line_ids,
                 'move_type':'out_invoice',
                 'l10n_latam_document_type_id':5,
-                'ref': obj.service_order
+                'ref': obj.service_order,
+                'invoice_origin': self.name,
+                'partner_id':7
               }).id
               boleta_id = boleta.search([('id', '=', boleta_id)]).invoice_line_ids[0].id
               self.env.cr.execute('insert into sale_order_line_invoice_rel (invoice_line_id,order_line_id) values(%s,%s)', (boleta_id, obj.id))
