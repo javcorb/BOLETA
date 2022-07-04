@@ -30,13 +30,13 @@
                         &amp;nbsp;&amp;nbsp;<br/>
 
                         <font size="2">Monto Total</font>
-                        <font size="2" style="text-align:right;">$<t t-esc="o.amount_total"/></font>
+                        <font size="2" style="text-align:right;"><span class="text-nowrap" t-field="o.amount_total"/></font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 
                         <font size="2">El IVA incluido en esta boleta es de</font>
-                        $
-                        <font size="2"><t t-esc="o.amount_total - o.amount_untaxed"/></font>
+
+                        <font size="2"><span class="text-nowrap" t-field="o.amount_tax"/></font>
                         <br/>
                         &amp;nbsp;&amp;nbsp;<br/>
 

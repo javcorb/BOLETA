@@ -14,7 +14,15 @@ class SaleOrderLine(models.Model):
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    @api.model
+    # def action_generar_boleta1(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+    #     result = super(SaleOrder, self).fields_view_get(view_id=view_id, view_type=view_type, toolbar=toolbar,
+    #                                                     submenu=submenu)
+    #     if toolbar and self.env.user.partner_id.flag:
+    #         for action in result['toolbar']['action']:
+    #             if action['name'] == 'Generar Boletas':
+    #                 result['toolbar']['action'].remove(action)
+    #     return result
+
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
         result = super(SaleOrder, self).fields_view_get(view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu)
         if toolbar and self.env.user.partner_id.flag:
